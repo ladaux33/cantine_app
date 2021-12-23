@@ -1,0 +1,132 @@
+
+LayoutExempleTabs
+
+<LayoutExempleTabs>:
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "relevé °"
+        PageLayout:
+            BoxLayoutApp:
+            TextInput:
+                text:root.enregistrement_temperature
+                multiline:True
+    TabbedPanelItem:
+        text: "relevé ° salle"
+
+
+
+
+    TabbedPanelItem:
+        text: "Melanie"
+        BoxLayout:
+            orientation: "vertical"
+            TextInput:
+                id: button_commande_melanie
+                text :root.commande_melanie_text(self)
+                multiline : True
+            Button:
+                text: "commander"
+                size_hint: None,None
+                size: 100,100
+                pos_hint: {"center_x":0.5}
+                on_press: root.commande_melanie_button(self)
+    TabbedPanelItem:
+        text: "Bernat"
+        BoxLayout:
+            orientation: "vertical"
+            TextInput:
+                id: button_commande_bernat
+                text :root.commande_bernat_text(self)
+                multiline : True
+            Button:
+                text: "commander"
+                size_hint: None,None
+                size: 100,100
+                pos_hint: {"center_x":0.5}
+    TabbedPanelItem:
+        text: "cbs"
+        BoxLayout:
+            orientation: "vertical"
+            TextInput:
+                id: button_commande_cbs
+                text :root.commande_cbs_text(self)
+                multiline : True
+            Button:
+                text: "commander"
+                size_hint: None,None
+                size: 100,100
+                pos_hint: {"center_x":0.5}
+
+
+<BoxLayoutApp@BoxLayout>:
+    orientation: "vertical"
+    Label:
+        text:str(int(slider_chambre1.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre1
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Label:
+        text:str(int(slider_chambre2.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre2
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Label:
+        text:str(int(slider_chambre3.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre3
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Label:
+        text:str(int(slider_chambre4.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre4
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+
+    Label:
+        text:str(int(slider_chambre5.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre5
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Label:
+        text:"temperature chambre froide six : "+str(int(slider_chambre6.value))
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Slider:
+        id: slider_chambre6
+        size_hint:None,1
+        pos_hint:{"center_x":0.5}
+        width:400
+    Button:
+        text:"enregistrement"
+        size_hint:None,None
+        pos_hint:{"center_x":0.5}
+        width:150
+        height:50
+        on_press: root.enregistrement_temperature(self)
+
+
